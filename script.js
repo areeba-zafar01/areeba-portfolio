@@ -316,7 +316,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (fabBtn && fabMenu) {
     let fabOpen = false;
-    fabBtn.addEventListener('click', () => {
+
+    function toggleFab(e) {
+      if (e) {
+        e.stopPropagation();
+      }
       fabOpen = !fabOpen;
       if (fabOpen) {
         fabMenu.classList.remove('fab-hidden');
@@ -337,12 +341,19 @@ document.addEventListener('DOMContentLoaded', () => {
         fabIconClose.style.transform = 'scale(0)';
         fabIconClose.style.opacity = '0';
       }
+    }
+
+    fabBtn.addEventListener('click', toggleFab);
+
+    // Prevent clicks inside menu from closing it prematurely
+    fabMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
 
     // Close FAB when clicking outside
     document.addEventListener('click', (e) => {
       if (fabOpen && !fabBtn.contains(e.target) && !fabMenu.contains(e.target)) {
-        fabBtn.click();
+        toggleFab(e);
       }
     });
   }
