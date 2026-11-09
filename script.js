@@ -164,21 +164,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============ SCROLL REVEAL ANIMATIONS ============
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.1
+    rootMargin: '0px 0px -30px 0px',
+    threshold: 0.05
   };
 
   const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0) scale(1) translateZ(0)';
       }
     });
   }, observerOptions);
 
-  // Observe all parent animate components
+  // Observe all parent animate components & reveal immediately if already visible
   document.querySelectorAll('[style*="opacity:0"], .reveal-item').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 60) {
+      el.classList.add('revealed');
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0) scale(1) translateZ(0)';
+    }
     scrollObserver.observe(el);
   });
 
@@ -259,38 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.disabled = false;
         }
       }, 3500);
-    });
-  };
-
-    fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-      btn.innerHTML = 'Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.disabled = false;
-        e.target.reset();
-      }, 3000);
-    })
-    .catch(error => {
-      console.error(error);
-      btn.innerHTML = 'Error!';
-      btn.style.background = '#ef4444'; // red
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
     });
   };
 
