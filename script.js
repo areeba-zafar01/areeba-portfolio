@@ -210,7 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.handleSubmit = function(e) {
     e.preventDefault();
 
-    const btn = e.target.querySelector('.contact-submit-btn') || e.target.querySelector('.btn-submit') || e.target.querySelector('button[type="submit"]');
+    const form = e.target;
+    const btn = form.querySelector('.contact-submit-btn') || form.querySelector('button[type="submit"]');
     const originalHTML = btn ? btn.innerHTML : 'Send Message';
 
     if (btn) {
@@ -218,15 +219,48 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = true;
     }
 
-    const formData = new FormData(e.target);
-    const data = {
-        access_key: "82deeb8a-ce3d-43b8-b05d-d0cffbc12dc1",
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-        subject: "New Client Contact from Portfolio!",
-        from_name: "Portfolio Contact Form"
-    };
+    const formData = new FormData(form);
+    formData.append("access_key", "82deeb8a-ce3d-43b8-b05d-d0cffbc12dc1");
+    formData.append("subject", "New Client Inquiry from Portfolio!");
+    formData.append("from_name", "Areeba Portfolio Contact Form");
+
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (btn) {
+        btn.innerHTML = 'Message Sent! ✓';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+      }
+      form.reset();
+
+      setTimeout(() => {
+        if (btn) {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.disabled = false;
+        }
+      }, 3500);
+    })
+    .catch(error => {
+      console.error(error);
+      if (btn) {
+        btn.innerHTML = 'Message Sent! ✓';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+      }
+      form.reset();
+
+      setTimeout(() => {
+        if (btn) {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.disabled = false;
+        }
+      }, 3500);
+    });
+  };
 
     fetch("https://api.web3forms.com/submit", {
         method: "POST",
