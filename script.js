@@ -91,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const roles = [
     'Software Engineer',
     'Full-Stack Developer',
-    'Computer Science Graduate',
-    'AI/ML Enthusiast',
-    'Problem Solver'
+    'Next.js & React Specialist',
+    'Enterprise Systems Builder',
+    'AI / ML Integrations'
   ];
   let roleIndex = 0;
   let charIndex = 0;
