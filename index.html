@@ -27,12 +27,9 @@
   <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b" style="background-color: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom-color: rgba(255, 255, 255, 0.1);" id="navbar">
     <div class="container-custom">
       <div class="flex items-center justify-between h-14">
-        <a class="flex items-center gap-2.5 group" href="#home" style="text-decoration:none;display:inline-flex;align-items:center;">
+        <a class="flex items-center gap-3.5 group" href="#home" style="text-decoration:none;display:inline-flex;align-items:center;">
           <div class="nav-logo-box">AZ</div>
-          <div style="display:flex;flex-direction:column;line-height:1.15;">
-            <span style="font-size:0.92rem;font-weight:700;color:#f1f5f9;letter-spacing:-0.01em;">Areeba Zafar</span>
-            <span style="font-size:0.68rem;color:#94a3b8;font-weight:500;">Software Engineer</span>
-          </div>
+          <span style="font-size:1.05rem;font-weight:700;color:#f8fafc;letter-spacing:-0.01em;">Areeba Zafar</span>
         </a>
         <nav class="hidden md:flex items-center gap-1">
           <a href="#home" class="nav-link-custom">
@@ -91,22 +88,12 @@
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
         <div class="text-center lg:text-left order-2 lg:order-1">
 
-          <!-- Available Badge & Voice Intro -->
+          <!-- Available Badge -->
           <div class="hero-badge-row">
             <div class="hero-avail-badge">
               <span class="avail-dot"></span>
               <span>Available for new projects</span>
             </div>
-            <button id="voiceIntroBtn" class="voice-intro-btn" type="button" title="Listen to Areeba's audio introduction">
-              <span class="voice-wave-bars">
-                <span class="vbar"></span>
-                <span class="vbar"></span>
-                <span class="vbar"></span>
-                <span class="vbar"></span>
-              </span>
-              <span id="voiceIntroText">Listen to Intro</span>
-              <span class="voice-badge">AI Voice</span>
-            </button>
           </div>
 
           <div class="hero-text-block">
@@ -137,10 +124,6 @@
               </svg>
               <span>Download Resume</span>
             </a>
-          </div>
-          <div id="voiceCaptionBar" class="voice-caption-box" style="display:none;">
-            <span class="voice-caption-icon">🎙</span>
-            <span id="voiceCaptionText" class="voice-caption-text">"Hi! I'm Areeba Zafar, Software Engineer & CS graduate (3.71 CGPA)..."</span>
           </div>
         </div>
 
@@ -547,10 +530,15 @@
                   <span class="tech-tag">Neon</span>
                 </div>
                 <div class="pc-footer">
-                  <span class="pc-link pc-link-primary" style="cursor: default;">
+                  <a href="https://cattle-feed-field-app.vercel.app/login" target="_blank" rel="noopener noreferrer" class="pc-link pc-link-primary">
                     <span style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; box-shadow: 0 0 6px #22c55e; animation: pulse 2s infinite; margin-right: 6px;"></span>
-                    Production Enterprise System
-                  </span>
+                    Live App Demo
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -749,10 +737,7 @@
             <!-- Contact Info Cards -->
             <div class="space-y-6 reveal-item">
               <div>
-                <h3 class="text-2xl font-bold mb-3">Let's Build Something <span class="gradient-text">Exceptional</span></h3>
-                <p class="text-sm text-muted-foreground leading-relaxed">
-                  I'm actively seeking remote Software Engineer &amp; Full-Stack Developer opportunities. Whether you have an open position, an exciting enterprise project, or want to discuss modern web systems — my inbox is always open.
-                </p>
+                <h3 class="text-2xl font-bold mb-1">Let's Build Something <span class="gradient-text">Exceptional</span></h3>
               </div>
 
               <div class="space-y-3.5 pt-2">

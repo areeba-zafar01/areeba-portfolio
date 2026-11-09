@@ -810,14 +810,15 @@ body {
   padding-bottom: 4px !important;
 }
 
-/* Centered neat 20px underline that can NEVER overflow or be too wide */
+/* Underline is strictly and EXACTLY equal to the text width */
 .nav-line {
   position: absolute !important;
   bottom: 0 !important;
-  left: 50% !important;
-  width: 20px !important;
-  height: 2.5px !important;
-  margin-left: -10px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  margin-left: 0 !important;
   background: linear-gradient(90deg, #22d3ee, #a855f7) !important;
   border-radius: 9999px !important;
   transform: scaleX(0) !important;
@@ -940,10 +941,10 @@ nav a > span:not(.nav-text-wrap) {
 }
 
 .hero-greeting {
-  font-size: 1.2rem !important;
-  font-weight: 500 !important;
-  color: #94a3b8 !important;
-  margin-bottom: 4px !important;
+  font-size: 1.55rem !important;
+  font-weight: 600 !important;
+  color: #f1f5f9 !important;
+  margin-bottom: 6px !important;
   letter-spacing: -0.01em !important;
 }
 
@@ -1399,16 +1400,15 @@ nav a > span:not(.nav-text-wrap) {
 }
 
 .pc-desc {
-  font-size: 0.85rem !important;
+  font-size: 0.86rem !important;
   color: #94a3b8 !important;
   line-height: 1.6 !important;
-  height: 4.8rem !important;
-  margin-bottom: 0.8rem !important;
+  min-height: 4.8rem !important;
+  height: auto !important;
+  margin-bottom: 0.9rem !important;
   text-align: left !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 3 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
+  display: block !important;
+  overflow: visible !important;
 }
 
 .pc-tech-row {
@@ -1622,4 +1622,9 @@ nav a > span:not(.nav-text-wrap) {
   pointer-events: auto !important;
   visibility: visible !important;
   transform: scale(1) translateY(0) !important;
+}
+
+/* Ensure section headings have breathing room below fixed navbar */
+section[id] {
+  scroll-margin-top: 80px !important;
 }
