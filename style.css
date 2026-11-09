@@ -450,13 +450,29 @@ body {
 }
 
 /* ==================== HERO MODERN TECH SHOWCASE ==================== */
+#home .section-padding {
+  padding-top: 5.5rem !important;
+}
+
 .hero-avatar-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 330px;
-  height: 330px;
+  width: 320px;
+  height: 320px;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  #home .section-padding {
+    padding-top: 4.75rem !important;
+  }
+  .hero-avatar-wrapper {
+    margin-top: 0.75rem;
+    width: 280px;
+    height: 280px;
+  }
 }
 
 .hero-conic-glow {
