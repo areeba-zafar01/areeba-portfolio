@@ -1663,3 +1663,39 @@ body,
   margin-bottom: 0.5rem !important;
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5) !important;
 }
+
+/* Vibrant Bento Icon Colors */
+.bento-icon-cyan {
+  background: rgba(6, 182, 212, 0.15) !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+  color: #22d3ee !important;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.3) !important;
+}
+
+.bento-icon-purple {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  color: #c084fc !important;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.3) !important;
+}
+
+.bento-icon-pink {
+  background: rgba(236, 72, 153, 0.15) !important;
+  border: 1px solid rgba(236, 72, 153, 0.4) !important;
+  color: #f472b6 !important;
+  box-shadow: 0 0 16px rgba(236, 72, 153, 0.3) !important;
+}
+
+.bento-icon-emerald {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+  color: #34d399 !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.3) !important;
+}
+
+.bento-card-title {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #f8fafc !important;
+  letter-spacing: -0.01em !important;
+}
