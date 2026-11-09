@@ -395,3 +395,363 @@ nav a.active span {
 
 
 
+
+
+/* ============================================================
+   PREMIUM 2026 THEME OVERHAUL (Modern, Sleek & High Impact)
+   ============================================================ */
+
+/* Deep luxury canvas */
+body {
+  background-color: #060913 !important;
+  color: #f1f5f9 !important;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 40%, rgba(139, 92, 246, 0.15), transparent),
+    radial-gradient(ellipse 50% 50% at 0% 80%, rgba(236, 72, 153, 0.12), transparent);
+  background-attachment: fixed;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060913;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4, #8b5cf6);
+  border-radius: 999px;
+}
+
+/* Luxury Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 40%, #c084fc 75%, #f472b6 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  filter: drop-shadow(0 2px 20px rgba(56, 189, 248, 0.25));
+}
+
+/* Navbar glass */
+#navbar {
+  background: rgba(6, 9, 19, 0.75) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: all 0.3s ease;
+}
+
+#navbar.scrolled {
+  background: rgba(6, 9, 19, 0.92) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+/* ==================== HERO MODERN TECH SHOWCASE ==================== */
+.hero-avatar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 330px;
+  height: 330px;
+}
+
+.hero-conic-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 40px;
+  background: conic-gradient(from 0deg, #06b6d4, #3b82f6, #8b5cf6, #ec4899, #06b6d4);
+  filter: blur(14px);
+  opacity: 0.65;
+  animation: spin-glow 14s linear infinite;
+  z-index: 1;
+}
+
+.hero-avatar-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 36px;
+  padding: 4px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.hero-avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #090e1f;
+  position: relative;
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-avatar-wrapper:hover .hero-avatar-img {
+  transform: scale(1.05);
+}
+
+@keyframes spin-glow {
+  to { transform: rotate(360deg); }
+}
+
+/* Floating Tech Badges */
+.floating-chip {
+  position: absolute;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(10, 15, 30, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.2);
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.floating-chip:hover {
+  transform: scale(1.08) translateY(-2px);
+  border-color: #38bdf8;
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.chip-1 { top: -12px; right: -20px; animation: chip-float 5s ease-in-out infinite; }
+.chip-2 { bottom: 20px; left: -25px; animation: chip-float 6s ease-in-out infinite 1s; }
+.chip-3 { top: 40px; left: -28px; animation: chip-float 5.5s ease-in-out infinite 0.5s; }
+.chip-4 { bottom: -12px; right: 10px; animation: chip-float 6.5s ease-in-out infinite 1.5s; }
+
+@keyframes chip-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Modern Status Pill */
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+  border-radius: 999px;
+  padding: 7px 18px;
+  margin-bottom: 24px;
+}
+
+/* Modern Glass Metric Strip */
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+  padding: 20px;
+  background: rgba(13, 18, 36, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* ==================== BENTO SKILLS GRID ==================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.bento-card {
+  position: relative;
+  background: rgba(13, 18, 36, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 26px;
+  backdrop-filter: blur(16px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.bento-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bento-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  transition: all 0.25s ease;
+}
+
+.bento-tag:hover {
+  background: rgba(56, 189, 248, 0.14);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* ==================== PROJECT CARDS V3 ==================== */
+.project-card-v2 {
+  position: relative;
+  background: rgba(13, 18, 36, 0.72) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(18px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-v2:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  box-shadow: 0 25px 50px -15px rgba(99, 102, 241, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+}
+
+.pc-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+.window-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #eab308; }
+.dot-green { background: #22c55e; }
+
+/* Timeline Modernization */
+#experience .card-hover {
+  background: rgba(13, 18, 36, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  backdrop-filter: blur(16px);
+  transition: all 0.35s ease;
+}
+
+#experience .card-hover:hover {
+  border-color: rgba(6, 182, 212, 0.45) !important;
+  box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.3) !important;
+  transform: translateX(4px) translateY(-3px) !important;
+}
+
+/* Shimmer Buttons */
+.btn-primary-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 13px 30px !important;
+  box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.4) !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.btn-primary-shimmer:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 35px -5px rgba(6, 182, 212, 0.6) !important;
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  backdrop-filter: blur(12px) !important;
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 13px 30px !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.btn-glass:hover {
+  background: rgba(56, 189, 248, 0.1) !important;
+  border-color: #38bdf8 !important;
+  color: #38bdf8 !important;
+  transform: translateY(-2px) !important;
+}
