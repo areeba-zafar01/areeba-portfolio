@@ -27,14 +27,11 @@
   <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b" style="background-color: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom-color: rgba(255, 255, 255, 0.1);" id="navbar">
     <div class="container-custom">
       <div class="flex items-center justify-between h-14">
-        <a class="flex items-center gap-3 group" href="#home">
-          <div class="relative flex items-center justify-center">
-            <img src="avatar.png" alt="Areeba Zafar" class="w-8 h-8 rounded-full object-cover border border-cyan-400/40 shadow-sm shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-            <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-slate-950"></span>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-sm font-bold text-foreground tracking-tight group-hover:text-cyan-400 transition-colors">Areeba Zafar</span>
-            <span class="text-[10px] text-muted-foreground font-mono -mt-0.5 hidden sm:block">Software Engineer</span>
+        <a class="flex items-center gap-2.5 group" href="#home" style="text-decoration:none;display:inline-flex;align-items:center;">
+          <img src="avatar.png" alt="Areeba Zafar" style="width:34px!important;height:34px!important;min-width:34px!important;max-width:34px!important;border-radius:50%!important;object-fit:cover!important;border:1.5px solid #22d3ee!important;display:block!important;box-shadow:0 0 10px rgba(34,211,238,0.35)!important;">
+          <div style="display:flex;flex-direction:column;line-height:1.15;">
+            <span style="font-size:0.9rem;font-weight:700;color:#f1f5f9;letter-spacing:-0.01em;">Areeba Zafar</span>
+            <span style="font-size:0.68rem;color:#94a3b8;font-weight:500;">Software Engineer</span>
           </div>
         </a>
         <nav class="hidden md:flex items-center gap-1">
@@ -145,21 +142,7 @@
             <span class="voice-caption-icon">🎙</span>
             <span id="voiceCaptionText" class="voice-caption-text">"Hi! I'm Areeba Zafar, Software Engineer & CS graduate (3.71 CGPA)..."</span>
           </div>
-          <div class="metrics-strip max-w-xl" style="opacity:0;transform:translateY(30px) translateZ(0)">
-            <div class="text-center">
-              <div class="text-2xl sm:text-3xl font-bold gradient-text" data-count="6">0</div>
-              <div class="text-xs sm:text-sm mt-1" style="color:#94a3b8;">Projects Built</div>
-            </div>
-            <div class="text-center" style="border-left:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08);">
-              <div class="text-2xl sm:text-3xl font-bold gradient-text" data-count="15">0</div>
-              <div class="text-xs sm:text-sm mt-1" style="color:#94a3b8;">Technologies</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl sm:text-3xl font-bold gradient-text">3.71</div>
-              <div class="text-xs sm:text-sm mt-1" style="color:#94a3b8;">CGPA / 4.00</div>
-            </div>
           </div>
-        </div>
 
         <div class="relative w-full flex items-center justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0" style="opacity:0;transform:translateX(50px) translateZ(0)">
           <div class="hero-avatar-wrapper">
