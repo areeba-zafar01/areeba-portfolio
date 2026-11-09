@@ -197,8 +197,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(targetId);
       if (target) {
         // Account for fixed navbar height and leave breathing room for section headings
-        const navbarHeight = document.getElementById('navbar')?.offsetHeight || 60;
-        const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
+        const navbarHeight = document.getElementById('navbar')?.offsetHeight || 56;
+        const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
         window.scrollTo({ top: targetTop, behavior: 'smooth' });
       }
 

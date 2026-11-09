@@ -1647,9 +1647,22 @@ nav a > span:not(.nav-text-wrap) {
   transform: translateY(0) scale(1) !important;
 }
 
-/* Ensure section headings have breathing room below fixed navbar */
+/* Ensure section headings have comfortable breathing room below fixed navbar */
 section[id] {
-  scroll-margin-top: 80px !important;
+  scroll-margin-top: 56px !important;
+}
+
+/* Reduced empty blank space above headings across all sections */
+.section-padding {
+  padding-top: 3.25rem !important;
+  padding-bottom: 4.25rem !important;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 2.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
 }
 
 /* =========================================================
