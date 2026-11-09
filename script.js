@@ -189,9 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetId = this.getAttribute('href');
       const target = document.querySelector(targetId);
       if (target) {
-        // Account for fixed navbar height and add offset to reduce blank space
-        const navbarHeight = document.getElementById('navbar')?.offsetHeight || 64;
-        const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight + 35;
+        // Account for fixed navbar height and leave breathing room for section headings
+        const navbarHeight = document.getElementById('navbar')?.offsetHeight || 60;
+        const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
         window.scrollTo({ top: targetTop, behavior: 'smooth' });
       }
 
@@ -210,11 +210,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.handleSubmit = function(e) {
     e.preventDefault();
 
-    const btn = e.target.querySelector('.btn-submit');
-    const originalHTML = btn.innerHTML;
+    const btn = e.target.querySelector('.contact-submit-btn') || e.target.querySelector('.btn-submit') || e.target.querySelector('button[type="submit"]');
+    const originalHTML = btn ? btn.innerHTML : 'Send Message';
 
-    btn.innerHTML = 'Sending...';
-    btn.disabled = true;
+    if (btn) {
+      btn.innerHTML = 'Sending...';
+      btn.disabled = true;
+    }
 
     const formData = new FormData(e.target);
     const data = {
