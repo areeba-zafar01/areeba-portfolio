@@ -336,5 +336,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  
+  // ============ INTERACTIVE AI VOICE INTRO ============
+  function initVoiceIntro() {
+    const voiceBtn = document.getElementById('voiceIntroBtn');
+    const voiceText = document.getElementById('voiceIntroText');
+    const captionBox = document.getElementById('voiceCaptionBar');
+    const captionText = document.getElementById('voiceCaptionText');
+    const avatarCard = document.querySelector('.hero-avatar-card');
+
+    if (!voiceBtn) return;
+
+    const speechScript = "Hi there! Welcome to my portfolio. I'm Areeba Zafar, a Software Engineer and Computer Science graduate with a 3.71 CGPA. I specialize in building enterprise full-stack web applications with Next.js, Node.js, and integrating AI models. Currently developing ERP platforms at Ali Habib Enterprises. Feel free to explore my projects or get in touch. Let's build something impactful together!";
+
+    let isPlaying = false;
+    let utterance = null;
+
+    function resetVoiceUI() {
+      isPlaying = false;
+      voiceBtn.classList.remove('playing');
+      if (voiceText) voiceText.textContent = 'Listen to Intro';
+      if (avatarCard) avatarCard.classList.remove('voice-active');
+      if (captionBox) captionBox.style.display = 'none';
+    }
+
+    voiceBtn.addEventListener('click', () => {
+      if (!('speechSynthesis' in window)) {
+        alert('Voice synthesis is not supported on this browser.');
+        return;
+      }
+
+      if (isPlaying) {
+        window.speechSynthesis.cancel();
+        resetVoiceUI();
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+
+      utterance = new SpeechSynthesisUtterance(speechScript);
+      utterance.rate = 0.95;
+      utterance.pitch = 1.05;
+
+      const voices = window.speechSynthesis.getVoices();
+      const preferredVoice = voices.find(v => 
+        (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Zira') || v.name.includes('Victoria') || v.name.includes('Female')) 
+        && v.lang.startsWith('en')
+      ) || voices.find(v => v.lang.startsWith('en'));
+
+      if (preferredVoice) {
+        utterance.voice = preferredVoice;
+      }
+
+      utterance.onstart = () => {
+        isPlaying = true;
+        voiceBtn.classList.add('playing');
+        if (voiceText) voiceText.textContent = 'Pause Intro';
+        if (avatarCard) avatarCard.classList.add('voice-active');
+        if (captionBox) {
+          captionBox.style.display = 'flex';
+          if (captionText) captionText.textContent = '"' + speechScript + '"';
+        }
+      };
+
+      utterance.onend = () => {
+        resetVoiceUI();
+      };
+
+      utterance.onerror = () => {
+        resetVoiceUI();
+      };
+
+      window.speechSynthesis.speak(utterance);
+    });
+
+    if ('speechSynthesis' in window && window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+  }
+  initVoiceIntro();
+
   console.log('🚀 Portfolio loaded successfully — Made by Areeba Zafar');
 });
